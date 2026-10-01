@@ -26,9 +26,9 @@ class Solution {
             }
         }
 
-        // if(maxrange>=nums.length-1){
-        //     return jump+2;
-        // }
+        if(maxrange>=nums.length-1){
+            return jump+2;
+        }
 
         index=jumpto;
         jump++;
