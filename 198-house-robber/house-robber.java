@@ -1,31 +1,20 @@
 class Solution {
-
-    public int find(int[] nums, int index, int[]dp){
-        if(index>=nums.length){
-            return 0;
-        }
-
-        if (dp[index] != -1) {
-            return dp[index];
-        }
-
-        int skip = find(nums, index + 1, dp);
-
-        int take = nums[index] + find(nums, index + 2, dp);
-
-        dp[index] = Math.max(skip, take);
-
-        return dp[index];
-
-    
-    }
     public int rob(int[] nums) {
 
-        int[] dp = new int[nums.length];
-
-        Arrays.fill(dp, -1);
-
-        return find(nums, 0, dp);
+        if(nums.length==0) return 0;
+        if(nums.length==1) return nums[0];
         
+        int last=nums[0];
+        int secondlast=0;
+        int res=0;
+
+        for(int i=1; i<nums.length; i++){
+            
+            res=Math.max(nums[i]+secondlast, last);
+            secondlast=last;
+            last=res;
+
+        }
+        return res;
     }
 }
