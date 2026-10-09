@@ -3,8 +3,7 @@ class Solution {
         
         Stack<Character> st=new Stack<>();
 
-        int open=0;
-        int close=0;
+        
         int insertion=0;
 
 
@@ -12,7 +11,7 @@ class Solution {
 
             if(s.charAt(i)=='('){
                 st.push('(');
-                open++;
+                
             }
 
             if(!st.isEmpty() && s.charAt(i)==')'){
