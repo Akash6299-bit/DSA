@@ -11,7 +11,7 @@ class Solution {
         if(sum%2!=0) return false;
 
         int target=sum/2;
-        boolean[] state=new boolean[sum+1];
+        boolean[] state=new boolean[target+1];
 
         state[0]=true;
 
